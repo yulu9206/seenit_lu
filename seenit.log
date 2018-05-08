@@ -1,0 +1,112 @@
+2018-05-07 21:58:29,523:INFO:Printing main menu - Request user response
+
+2018-05-07 21:58:50,713:INFO:Response: 1 - Login
+
+2018-05-07 21:58:50,714:INFO:Print login menu - Request user response
+
+2018-05-07 21:58:59,128:INFO:Response: 1 - Register
+
+2018-05-07 21:58:59,129:INFO:Register request user response
+
+2018-05-07 21:59:33,666:INFO:Response: 
+2018-05-07 21:59:33,666:INFO:user name: 
+2018-05-07 21:59:33,667:INFO:testadmin
+2018-05-07 21:59:33,667:INFO: password: 
+2018-05-07 21:59:33,667:INFO:1111
+2018-05-07 21:59:33,667:INFO: email: 
+2018-05-07 21:59:33,667:INFO:test@email.com
+2018-05-07 21:59:33,667:INFO:Are you administrator? 
+2018-05-07 21:59:33,667:INFO:y
+2018-05-07 21:59:33,668:INFO:
+
+2018-05-07 21:59:33,669:INFO:insert user successfully
+
+2018-05-07 21:59:33,672:INFO:Printing main menu - Request user response
+
+2018-05-07 22:00:31,789:INFO:Response: 0 - Account Profile
+
+2018-05-07 22:00:31,794:INFO:read one user successfully
+
+2018-05-07 22:00:31,795:INFO:Print account_profile menu - Request user response
+
+2018-05-07 22:00:35,509:INFO:Response: 3 - Show All Accounts
+
+2018-05-07 22:00:35,510:INFO:read all users successfully
+
+2018-05-07 22:00:35,512:INFO:read one user successfully
+
+2018-05-07 22:00:35,512:INFO:Print account_profile menu - Request user response
+
+2018-05-07 22:02:22,643:INFO:Response: 2 - Delete My Account
+
+2018-05-07 22:02:22,644:INFO:delete user successfully
+
+2018-05-07 22:02:22,646:INFO:Printing main menu - Request user response
+
+2018-05-07 22:02:34,455:INFO:Response: 4 - Exit
+
+2018-05-07 22:02:37,499:INFO:Printing main menu - Request user response
+
+2018-05-07 22:02:39,686:INFO:Response: 1 - Login
+
+2018-05-07 22:02:39,686:INFO:Print login menu - Request user response
+
+2018-05-07 22:02:41,554:INFO:Response: 1 - Register
+
+2018-05-07 22:02:41,554:INFO:Register request user response
+
+2018-05-07 22:02:53,073:INFO:Response: 
+2018-05-07 22:02:53,073:INFO:user name: 
+2018-05-07 22:02:53,074:INFO:test
+2018-05-07 22:02:53,074:INFO: password: 
+2018-05-07 22:02:53,074:INFO:test
+2018-05-07 22:02:53,074:INFO: email: 
+2018-05-07 22:02:53,074:INFO:test
+2018-05-07 22:02:53,074:INFO:Are you administrator? 
+2018-05-07 22:02:53,074:INFO:y
+2018-05-07 22:02:53,074:INFO:
+
+2018-05-07 22:02:53,076:INFO:insert user successfully
+
+2018-05-07 22:02:53,078:INFO:Printing main menu - Request user response
+
+2018-05-07 22:03:15,742:INFO:Response: 0 - Account Profile
+
+2018-05-07 22:03:15,742:INFO:read one user successfully
+
+2018-05-07 22:03:15,743:INFO:Print account_profile menu - Request user response
+
+2018-05-07 22:03:19,230:INFO:Response: 1 - Update Account Info
+
+2018-05-07 22:03:19,230:INFO:Response 1 request user response
+
+2018-05-07 22:03:33,608:INFO:user name: 
+2018-05-07 22:03:33,608:INFO:test
+2018-05-07 22:03:33,608:INFO: password: 
+2018-05-07 22:03:33,609:INFO:test
+2018-05-07 22:03:33,609:INFO: email: 
+2018-05-07 22:03:33,609:INFO:test@email
+2018-05-07 22:03:33,609:INFO:
+
+2018-05-07 22:03:33,611:INFO:update user successfully
+
+2018-05-07 22:03:33,614:INFO:read one user successfully
+
+2018-05-07 22:03:33,614:INFO:Print account_profile menu - Request user response
+
+2018-05-07 22:03:37,422:INFO:Response: 3 - Show All Accounts
+
+2018-05-07 22:03:37,423:INFO:read all users successfully
+
+2018-05-07 22:03:37,423:INFO:read one user successfully
+
+2018-05-07 22:03:37,424:INFO:Print account_profile menu - Request user response
+
+2018-05-07 22:03:45,702:INFO:Response: 2 - Delete My Account
+
+2018-05-07 22:03:45,703:INFO:delete user successfully
+
+2018-05-07 22:03:45,704:INFO:Printing main menu - Request user response
+
+2018-05-07 22:03:53,037:INFO:Response: 4 - Exit
+

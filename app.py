@@ -49,7 +49,7 @@ def register():
     logging.info("Are you administrator? ")
     logging.info(w)
     logging.info("\n")
-    user.insert(new_u_id, x, z, y)
+    user.insert(new_u_id, x, y, z)
     this_u_id = new_u_id
     # print ("this u id is ", this_u_id)
     new_u_id += 1

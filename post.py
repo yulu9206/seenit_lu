@@ -27,7 +27,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one post successfully\n")
-            print ("post read successfully")
+            # print ("post read successfully")
             return item
         except:
             logging.info("read one post error\n")
@@ -47,15 +47,15 @@ def delete(p_id):
             print ("post delete error")
 
 def read_all(seenit_id):
-    query = "SELECT * FROM post WHERE seenit_id=" + str(seenit_id)
+    query = "SELECT p_id, u_name, p_content FROM post join user on author_id=u_id WHERE seenit_id=" + str(seenit_id)
     with conn:
         try:
             c.execute(query)
             items = c.fetchall()
             logging.info("read all posts successfully\n")
-            print ("post read successfully")
-            formatted_row = '{:<12} {:<60} {:<12} {:<12}'
-            print(formatted_row.format("p_id", "p_content", "seenit_id", "author_id"))
+            # print ("post read successfully")
+            formatted_row = '{:<12} {:<12} {:<60}'
+            print(formatted_row.format("p_id", "author", "content"))
             print ("-" * 100)
             for Row in items:
                 print (formatted_row.format(*Row))

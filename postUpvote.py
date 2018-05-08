@@ -8,9 +8,11 @@ c = conn.cursor()
 
 def insert(id, post_id, author_id):
     query = "INSERT INTO post_upvote (pu_id, post_id, author_id) VALUES (" + str(id) + "," + str(post_id) + "," + str(author_id) + ")"
+    # print (query)
     with conn:
         try:
             c.execute(query)
+            # print ("executed")
             logging.info("insert post upvote successfully\n")
             print ("insert successfully")
             conn.commit()
@@ -27,7 +29,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one post upvote successfully\n")
-            print ("read successfully")
+            # print ("read successfully")
             return item
         except:
             logging.info("read one post upvote error\n")
@@ -49,11 +51,11 @@ def delete(id):
 def read_all(post_id):
     with conn:
         try:
-            c.execute("SELECT * FROM post_upvote WHERE post_id=" + str(post_id))
+            c.execute("SELECT u_name FROM post_upvote join user on author_id=u_id WHERE post_id=" + str(post_id))
             items = c.fetchall()
             logging.info("read all post upvote successfully\n")
-            print ("read successfully")
-            return items
+            for i in items:
+                print (i[0])
         except:
             logging.info("read all post upvote error\n")
             print("read error")

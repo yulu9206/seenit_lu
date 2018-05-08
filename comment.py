@@ -28,7 +28,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one comment successfully\n")
-            print ("read successfully")
+            # print ("read successfully")
             return item
         except:
             logging.info("Read one comment error\n")
@@ -49,13 +49,15 @@ def delete(id):
             print ("delete error")
 
 def read_all(post_id):
+    query = "SELECT c_id, u_name, c_content FROM comment join user on author_id=u_id WHERE post_id=" + str(post_id)
     with conn:
         try:
-            c.execute("SELECT * FROM comment WHERE post_id=" + str(post_id))
+            c.execute(query)  
+            # c.execute("SELECT * FROM comment WHERE post_id=" + str(post_id))
             items = c.fetchall()
             logging.info("read all comments successfully\n")
-            formatted_row = '{:<12} {:<12} {:<12} {:<12}'
-            print(formatted_row.format("c_id", "c_content", "author_id", "post_id"))
+            formatted_row = '{:<12} {:<12} {:<60}'
+            print(formatted_row.format("c_id", "author", "content"))
             print ("-" * 100)
             for Row in items:
                 print (formatted_row.format(*Row))

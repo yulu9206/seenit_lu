@@ -28,7 +28,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one comment downvote successfully\n")
-            print ("read successfully")
+            # print ("read successfully")
             return item
         except:
             logging.info("read one comment downvote erroor\n")
@@ -51,11 +51,11 @@ def delete(id):
 def read_all(comment_id):
     with conn:
         try:
-            c.execute("SELECT * FROM comment_downvote WHERE comment_id=" + str(comment_id))
+            c.execute("SELECT u_name FROM comment_downvote join user on author_id=u_id WHERE comment_id=" + str(comment_id))
             items = c.fetchall()
-            logging.info("read all comment downvotes successfully\n")
-            print ("read successfully")
-            return items
+            logging.info("read all comment downvote successfully\n")
+            for i in items:
+                print (i[0])
         except:
             logging.info("read all comment downvotes error\n")
             print("read error")

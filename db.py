@@ -145,7 +145,10 @@ def insert_seenits():
 def insert_posts():
     logging.info("Inserting value into Post table")
     with conn:
-        c.execute('INSERT INTO post VALUES (1,"Beautiful sunset reflecting on the sea.",4,2)')
+        c.execute('INSERT INTO post VALUES (5,"Beautiful sunset reflecting on the sea.",4,2)')
+        c.execute('INSERT INTO post VALUES (1,"Structures destroyed by lava in Leilani Estates.",1,1)')
+        c.execute('INSERT INTO post VALUES (6,"Starbucks Sells Nestlé the Rights to Offer Its Coffee in Stores.",1,2)')
+        c.execute('INSERT INTO post VALUES (7,"Third flight in three weeks diverted because of damaged window.",1,3)')
         c.execute('INSERT INTO post VALUES (2,"Animal shelters across U.S. teach cats how to high five to make them more attractive for adoption",1,3)')
         c.execute('INSERT INTO post VALUES (3,"This is how my fathers dog says hello to me when I go to see him",3,4)')
         c.execute('INSERT INTO post VALUES (4,"Is this the game that everyone is talking about [OC]",2,1)')
@@ -153,10 +156,13 @@ def insert_posts():
 def insert_comments():
     logging.info("Inserting value into Comment table")
     with conn:
-        c.execute('INSERT INTO comment VALUES (1,"cool",2,1)')
+        c.execute('INSERT INTO comment VALUES (6,"cool",2,5)')
         c.execute('INSERT INTO comment VALUES (2,"LOL",3,3)')
-        c.execute('INSERT INTO comment VALUES (3,"beautiful",4,1)')
+        c.execute('INSERT INTO comment VALUES (3,"beautiful",4,4)')
         c.execute('INSERT INTO comment VALUES (4,"funny",3,2)')
+        c.execute('INSERT INTO comment VALUES (5,"Who was the Mayor when developers were allowed to build the infrastructure in the middle of a known volcanically active site? ",1,1)')
+        c.execute('INSERT INTO comment VALUES (1,"Let us all pull together and help out our Hawaii island neighbors.",2,1)')
+        c.execute('INSERT INTO comment VALUES (7,"I hope that the rich in West Hawaii will finally step up to help as well.",3,1)')
 
 def insert_post_upvote():
     logging.info("Inserting value into Post_Upvote table")
@@ -165,9 +171,20 @@ def insert_post_upvote():
         c.execute('INSERT INTO post_upvote VALUES (2,2,2)')
         c.execute('INSERT INTO post_upvote VALUES (3,3,3)')
         c.execute('INSERT INTO post_upvote VALUES (4,4,4)')
-        c.execute('INSERT INTO post_upvote VALUES (5,1,2)')
-        c.execute('INSERT INTO post_upvote VALUES (6,1,3)')
-        c.execute('INSERT INTO post_upvote VALUES (7,1,4)')
+        c.execute('INSERT INTO post_upvote VALUES (5,2,1)')
+        c.execute('INSERT INTO post_upvote VALUES (6,3,1)')
+        c.execute('INSERT INTO post_upvote VALUES (7,4,1)')
+
+def insert_comment_upvote():
+    logging.info("Inserting value into Comment_Upvote table")
+    with conn:
+        c.execute('INSERT INTO comment_upvote VALUES (1,1,1)')
+        c.execute('INSERT INTO comment_upvote VALUES (2,2,2)')
+        c.execute('INSERT INTO comment_upvote VALUES (3,3,3)')
+        c.execute('INSERT INTO comment_upvote VALUES (4,4,4)')
+        c.execute('INSERT INTO comment_upvote VALUES (5,2,1)')
+        c.execute('INSERT INTO comment_upvote VALUES (6,3,1)')
+        c.execute('INSERT INTO comment_upvote VALUES (7,4,1)')
 
 def show_users():
     with conn:

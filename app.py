@@ -10,9 +10,9 @@ import logging
 logging.basicConfig(filename='seenit.log', level=logging.INFO,
                     format='%(asctime)s:%(levelname)s:%(message)s')
 
-new_u_id = new_s_id = new_p_id = new_c_id = 5
-new_pu_id = 8
-new_pd_id = new_cu_id = new_cd_id = 1
+new_u_id = new_s_id = 5
+new_p_id = new_c_id = new_pu_id = new_cu_id = 8
+new_pd_id = new_cd_id = 1
 this_u_id = 0
 admin = False
 
@@ -25,18 +25,19 @@ def build_database():
     db.insert_posts()
     db.insert_comments()
     db.insert_post_upvote()
-    db.show_seenits()
-    db.show_posts()
-    db.show_comments()
-    db.show_post_upvotes()
+    db.insert_comment_upvote()
+    # db.show_seenits()
+    # db.show_posts()
+    # db.show_comments()
+    # db.show_post_upvotes()
         
 def register():
     global new_u_id, this_u_id, admin
     logging.info("Register request user response\n")
     print("1 - Register")
-    x = input("user name: ")
+    x = input("Username: ")
     z = getpass.getpass('Password:')
-    y = input("email: ")
+    y = input("Email: ")
     w = input("Are you an administrator? (y/n)")
     logging.info("Response: ")
     logging.info("user name: ")
@@ -77,11 +78,11 @@ def login():
         logging.info("Response: 2 - Already A Member\n")
         logging.info("Print login menu - Request user response\n")
         print("2 - Login")
-        x = input("user name:")
+        x = input("Username:")
         y = getpass.getpass('Password:')
         w = input("Are you an administrator? (y/n)")
         this_u_id = user.login(x, y)
-        logging.info("user name: ")
+        logging.info("Username: ")
         logging.info(x)
         logging.info(" password: ")
         logging.info(y)
@@ -137,18 +138,16 @@ def delete_vote(table, vote, id):
         show_comment(id)
 
 def show_votes(table, id):
+    print ("【Upvotes】:")
     if table == 'comment':
-        up = cu.read_all(id)
+        cu.read_all(id)
     else:
-        up = pu.read_all(id)
-    print ("Upvotes:")
-    print (up)
+        pu.read_all(id)
+    print ("【Downvotes】:")    
     if table == 'comment':
-        down = cd.read_all(id)
+        cd.read_all(id)
     else:
-        down = pd.read_all(id)
-    print ("Downvotes:")
-    print (down)
+        pd.read_all(id)
     print("-" * 40)
     print ("                Vote Menu")
     print("-" * 40)
@@ -200,8 +199,7 @@ def insert_comment(p_id):
     show_comments(p_id)  
 
 def show_comment(c_id):
-    _comment= comment.read_one(c_id)
-    print (_comment)
+    comment.read_one(c_id)
     show_votes('comment', c_id)
 
 def delete_comment(p_id):
@@ -466,7 +464,7 @@ def show_seenits():
 def account_profile():
     global this_u_id
     user_info = user.read_one(this_u_id)
-    print("Account Information:")
+    print("My Account Information:")
     print(user_info)
     print("-" * 40)
     print("                Account Menu")
@@ -535,9 +533,9 @@ def print_main_menu():
 
 def print_Welcome_menu():
     # MENU DESIGN!
-    print (30 * "~", "Welcome", 33 * "~")
-    print ('|', 25 * " ", "User ID is", this_u_id, 29 * " ", "|")
-    print ('|', 2 * " ", "0 means not logged in yet, other number means logged in already", 1 * " ", "|")
+    print (33 * "~", "Welcome", 33 * "~")
+    print ('|', 27 * " ", "User ID is", this_u_id, 29 * " ", "|")
+    print ('|', 2 * " ", "(0 means not logged in yet, other number means logged in already)", 1 * " ", "|")
     print (72 * "~")
 
 def print_login_menu():
@@ -581,5 +579,5 @@ def main_menu():
         logging.info("Response: 4 - Exit\n")
         exit()
 
-# build_database()
+build_database()
 main_menu()

@@ -24,14 +24,14 @@ def insert(id, name, email, pwd):
             print ("insert error")
 
 def read_one(u_id):
-    query = "SELECT * FROM user WHERE u_id=" + str(u_id)
+    query = "SELECT u_id, u_name, email FROM user WHERE u_id=" + str(u_id)
     with conn:
         try:
             c.execute(query)
             users = c.fetchall()
             user_info = users[0]
             logging.info("read one user successfully\n")
-            print ("User Info read successfully")
+            # print ("User Info read successfully")
             return user_info
         except:
             logging.info("read one user error\n")
@@ -69,21 +69,23 @@ def delete(id):
 
 # get all users
 def read_all():
+    query = 'SELECT u_id, u_name, email FROM user'
     with conn:
         try:
-            c.execute('SELECT * FROM user')
+            c.execute('SELECT u_id, u_name, email FROM user')
             users = c.fetchall()
             logging.info("read all users successfully\n")
-            print ("read successfully")
-            formatted_row = '{:<12} {:<12} {:<20} {:<12}'
-            print(formatted_row.format("u_id", "u_name", "password", "email"))
+            print ("All Accounts:")
+            formatted_row = '{:<12} {:<12} {:<12}'
+            print(formatted_row.format("u_id", "u_name", "email"))
             print ("-" * 40)
             for Row in users:
                 print(formatted_row.format(*Row))
+            print ("-" * 40)
         except:
             logging.info("read all users error\n")
             print("read error")
-
+            
 # update account info
 def update(id, name, pwd, email):
     h_pwd = crypt.crypt(pwd,salt)
@@ -100,6 +102,6 @@ def update(id, name, pwd, email):
             logging.info("update user error\n")
             print ("update error")
 
-
+# read_all()
 
 

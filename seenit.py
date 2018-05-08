@@ -27,7 +27,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one seenit successfully\n")
-            print ("seenit read successfully")
+            # print ("seenit read successfully")
             return item
         except:
             logging.info("read one seenit error\n")
@@ -49,12 +49,12 @@ def delete(id):
 def read_all():
     with conn:
         try:
-            c.execute('SELECT * FROM seenit')
+            c.execute('SELECT s_id, category, u_name FROM seenit JOIN user ON creater_id=u_id')
             items = c.fetchall()
             logging.info("read all seenits successfully\n")
-            print ("seenit read successfully")
+            print ("All Seenits:")
             formatted_row = '{:<12} {:<12} {:<12}'
-            print(formatted_row.format("s_id", "category", "creator_id"))
+            print(formatted_row.format("s_id", "category", "creator"))
             print ("-" * 40)
             for Row in items:
                 print(formatted_row.format(*Row))

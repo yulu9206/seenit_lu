@@ -580,5 +580,5 @@ def main_menu():
         logging.info("Response: 4 - Exit\n")
         exit()
 
-build_database()
+# build_database()
 main_menu()

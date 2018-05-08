@@ -27,7 +27,7 @@ def read_one(id):
             items = c.fetchall()
             item = items[0]
             logging.info("read one post downvote successfully\n")
-            print ("read successfully")
+            # print ("read successfully")
             return item
         except:
             logging.info("read one post downvote error\n")

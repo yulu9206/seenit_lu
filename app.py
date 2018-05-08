@@ -518,8 +518,9 @@ def account_profile():
         main_menu()
 
 def logout():
-    global this_u_id
+    global this_u_id, admin
     this_u_id = 0
+    admin = False
     main_menu()
 
 def print_main_menu():
